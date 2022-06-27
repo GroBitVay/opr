@@ -1,0 +1,19 @@
+using System.Globalization;
+using System.Threading;
+class Program {
+public static void Main (string[] args) {
+Console.Write("Введите число a: ");
+int a= int.Parse(Console.ReadLine());
+Console.Write("Введите число b: ");
+int b= int.Parse(Console.ReadLine());
+Console.WriteLine("Вывод:");
+for (int i=0; i<100; i++)
+Console.Write($"{PsevdoRandom(a,b)} ");
+}
+static int PsevdoRandom(int a, int b){
+DateTime localDate = DateTime.Now;
+double C= localDate.Second*localDate.Millisecond+9929;
+Thread.Sleep(localDate.Millisecond);
+return (int)((9923/C)*(b-a)+a);
+}
+}
