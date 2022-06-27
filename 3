@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OPR1_3
+{
+internal class Program
+{
+static void Main(string[] args)
+{
+Console.Write("Введите количество элементов массива: ");
+int leight = int.Parse(Console.ReadLine());
+double[] myArray = new double[leight];
+
+for (int i = 0; i < leight; i++)
+{
+Console.Write($"Введите {i + 1}-й элемент массива: ");;
+myArray[i] = double.Parse(Console.ReadLine());
+}
+
+double max = myArray.Max();
+double min = myArray.Min();
+Console.WriteLine($"Сумма наибольшего и наименьшего элементов массива равна {max + min}");
+}
+}
+}
