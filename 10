@@ -1,0 +1,17 @@
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Введите массив: ");
+        string[] a = Console.ReadLine().Split();
+        Random rnd = new Random();
+        int k;
+        for (int i = 0; i < a.Length; i++)
+        {
+            k = rnd.Next(i);
+            (a[i], a[k]) = (a[k], a[i]);
+        }
+        Console.WriteLine($"Изменённый массив: \n{String.Join(" ", a)}");
+    }
+}
