@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OPR1_6
+{
+internal class Program
+{
+static void Main(string[] args)
+{
+int sum = 0;
+int number = 30;
+while (number < 100)
+{
+number++;
+if (number % 10 == 2 || number % 10 == 4 || number % 10 == 8)
+{
+sum += number;
+}
+}
+Console.WriteLine($"Сумма данных чисел равна {sum}");
+}
+}
+}
