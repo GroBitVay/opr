@@ -1,0 +1,28 @@
+class Program {
+public static void Main (string[] args) {
+int ch=-1, flag=0;
+Console.Write("Введите n: ");
+int n = int.Parse(Console.ReadLine());
+Console.Write("Введите k: ");
+int k = int.Parse(Console.ReadLine());
+Random rnd= new Random();
+int KompCh= rnd.Next(1,n);
+do{
+Console.Write("Введите число: ");
+bool Pch=int.TryParse(Console.ReadLine(), out ch);
+if (Pch==false){
+Console.WriteLine("Введённые данные не корректны!");
+}else if(ch>KompCh){
+Console.WriteLine("Меньше");
+}else if (ch==KompCh) {
+Console.WriteLine("Правильно");
+flag++;
+}else{
+Console.WriteLine("Больше");
+}
+k--;
+}while (ch!=KompCh && k!=0);
+if (flag!=1)
+Console.WriteLine($"Попытки кончились, было загадано число: {KompCh}");
+}
+}
