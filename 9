@@ -1,0 +1,31 @@
+class Program {
+public static void Main (string[] args) {
+int Day = int.Parse(Console.ReadLine());
+int Month = int.Parse(Console.ReadLine());
+int Year = int.Parse(Console.ReadLine());
+int Raz=-2;
+for(int i=0; i<=Year-Year%100; i+=100){
+if (i%400!=0)
+Raz++;
+}
+if (Year%100==0 && Year%400!=0 && Month<3){
+Perevod(Day, Month, Year, Raz-1);
+}else{
+Perevod(Day, Month, Year, Raz);
+}
+}
+static void Perevod(int Day, int Month, int Year, int Raz){
+int[] a ={31,28,31,30,31,30,31,31,30,31,30,31};
+if (Year%4==0 && (Year%100!=0 || Year%400==0)){
+a[1]+=1;
+}
+int k=0;
+Day+=Raz;
+k=Month;
+Month+=(int)(Day/a[Month-1]);
+Year+=(int)(Month/12);
+Day=Day%a[k-1];
+Month=Month%12;
+Console.WriteLine($"{Day}.{Month}.{Year}");
+}
+}
