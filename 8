@@ -1,0 +1,22 @@
+class Program {
+public static void Main (string[] args) {
+int Day = int.Parse(Console.ReadLine());
+int Month = int.Parse(Console.ReadLine());
+int Year = int.Parse(Console.ReadLine());
+int[] a ={31,28,31,30,31,30,31,31,30,31,30,31};
+int KolvoDays=365;
+if (Year%4==0 && (Year%100!=0 || Year%400==0)){
+a[1]+=1;
+KolvoDays++;
+}
+if (Day>=1 && Month>=1 && Month<=12 && Day<=a[Month-1]){
+int Days=0;
+for(int i=0;i<Month-1;i++)
+Days+=a[i];
+Console.WriteLine(Days+Day);
+Console.WriteLine(KolvoDays-Days-Day);
+}else{
+Console.WriteLine("Дата не коректна");
+}
+}
+}
