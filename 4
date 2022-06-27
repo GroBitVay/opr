@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace OPR1_4
+{
+internal class Program
+{
+static void Main(string[] args)
+{
+Console.Write("Введите количество последовательности первых N чисел Фибоначчи: ");
+int N = int.Parse(Console.ReadLine());
+ulong[] myArray = new ulong[N];
+
+if (N == 1)
+{
+Console.WriteLine(0);
+}
+else if (N == 2)
+{
+Console.WriteLine("0\n1");
+}
+else
+{
+myArray[0] = 0;
+myArray[1] = 1;
+Console.WriteLine("0\n1");
+
+for (int i = 2; i < N; i++)
+{
+myArray[i] = myArray[i - 1] + myArray[i - 2];
+Console.WriteLine(myArray[i]);
+}
+}
+}
+}
+}
