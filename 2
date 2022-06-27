@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OPR1_2
+{
+internal class Program
+{
+static void Main(string[] args)
+{
+Console.Write("Введите координату х: ");
+double x = double.Parse(Console.ReadLine());
+Console.Write("Введите координату у: ");
+double y = double.Parse(Console.ReadLine());
+Console.Write("Введите радиус круга: ");
+double R = double.Parse(Console.ReadLine());
+
+double d = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+if (d <= R)
+Console.WriteLine("Точка находится внутри круга.");
+else
+Console.WriteLine("Точка находится вне круга.");
+}
+}
+}
