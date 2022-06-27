@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OPR1_5
+{
+internal class Program
+{
+static void Main(string[] args)
+{
+Console.Write("Введите натуральное число n: ");
+string n = Console.ReadLine();
+char last = n.Last();
+int count = 0;
+int index = 0;
+while (index != n.Length)
+{
+if (n[index] == last)
+{
+count++;
+}
+index++;
+}
+Console.WriteLine($"Колличество раз встречающихся {last} в числе {n}: {count}");
+}
+}
+}
